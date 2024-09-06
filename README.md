@@ -1,5 +1,9 @@
 # ser-IR (Serial + Infra Red)
 
+<p align="center">
+<img src="https://github.com/ncaio/serIR/blob/main/img/Neo%20Tech.png" alt="alt text" width="400" class="center"/>
+</p>
+
 Ser-IR is an educational abstraction app of Infra Red signals captured from human and Television interaction  to talk about possible cybersecurity risks, such as:
 
  - **Keylogging**;
@@ -44,3 +48,9 @@ keyboard := [4][10]string{{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}, {"
  ",", "."}}
 
 ```
+### Keylogging
+
+### Profile Tracking
+
+### IR payload injection
+
