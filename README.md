@@ -50,6 +50,14 @@ keyboard := [4][10]string{{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}, {"
 ```
 ### Keylogging
 
+In this scenario, We'll talk about infrared keyloggers. As We know, the keylogger is an evil app created to record keyboard inputs. There are a lot of ways to do it, it depends on each scenario. In our case, capturing IR signals. 
+
+Steps:
+
+ - Putting the hardware in place. (Put it on very close to the TV sensor);
+ - On TV, go to a keyboard interaction. For example, a browser or another textbox interaction;
+ - It is time to start the serIR;
+
 ### Profile Tracking
 
 ### IR payload injection
