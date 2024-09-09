@@ -1,10 +1,10 @@
-# ser-IR (Serial + Infra Red)
+# serIR (Serial + Infrared)
 
 <p align="center">
 <img src="https://github.com/ncaio/serIR/blob/main/img/Neo%20Tech.png" alt="alt text" width="400" class="center"/>
 </p>
 
-Ser-IR is an educational abstraction app of Infra Red signals captured from human and Television interaction  to talk about possible cybersecurity risks, such as:
+SerIR is an educational abstraction app of Infrared signals captured from human and Television interaction to talk about possible cybersecurity risks, such as:
 
  - **Keylogging**;
  - **Profile Tracking**;
@@ -18,13 +18,17 @@ When you are in front of your TV holding the controller and pressing any button,
 
 ### The Hardware
 
-This project is based on a NEC Infrared Codec Module (ver1.0) (YS-IRTM).
+Hardware inventory: 
+ - O1 NEC Infrared Codec Module (ver1.0) (YS-IRTM);
+ - 02 BT-05 Bluetooth modules;
+ - O1 CP2120 Module USB to TTL.
 
 #### Characteristics
 
  - 38khz InfraRed encoder(transmitter) and decoder (receiver);
  - Infrared Head Extension (scalability); 
- - UART Microcontroller Serial Communication Interface.
+ - UART Microcontroller Serial Communication Interface;
+ - Bluetooth communication.
 
 ### The software
 
@@ -50,7 +54,7 @@ keyboard := [4][10]string{{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}, {"
 ```
 ### Keylogging
 
-In this scenario, We'll talk about infrared keyloggers. As We know, the keylogger is an evil app created to record keyboard inputs. There are a lot of ways to do it, it depends on each scenario. In our case, capturing IR signals. 
+In this scenario, We'll talk about infrared keyloggers. As We know, the keylogger is an evil app created to record keyboard inputs. There are a lot of ways to do it, it depends on each scenario. In our case, we are capturing IR signals. 
 
 Steps:
 
@@ -62,3 +66,7 @@ Steps:
 
 ### IR payload injection
 
+### Sources and references
+
+ - [NEC Infrared Codec Module (ver1.0) (YS-IRTM) - PDF] (https://aitendo3.sakura.ne.jp/aitendo_data/product_img/sensor/infrared/M1838-NEC-4P/M1838-NEC-4P_aitendo.pdf)
+ - [MLT-BT05 4.0 Bluetooth module] (http://denethor.wlu.ca/arduino/MLT-BT05-AT-commands-TRANSLATED.pdf)
