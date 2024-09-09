@@ -40,17 +40,20 @@ A virtual/real keyboard is or looks like a matrix. I/We have learned how to abst
 | a | s | d | f | `g` | h | j | k | l | ç |
 | z | x | c | v | b | n | m | , | . | ; |
 
-The algorithm used here interacts with the sent signals walking through this array. And every virtual keyboard has an initial/start point. In this case, the starting point is **g** or index [2,4].   
+The algorithm interacts with the sent IR signals, captured by the IR module, and replays the "movements". Every virtual keyboard has an initial/start point. This test's starting point was **g** or index [2,4].   
 
 **Example - LG TV KEYBOARD MAPPING**
 
-Just a piece of code from this project. It is this way of mapping a keyboard as a matrix using Golang.
+<p align="center">
+<img src="https://github.com/ncaio/serIR/blob/main/img/Screenshot_20240909_164601.png" alt="alt text" width="600" class="center"/>
+</p>
+
+The following code represents the basic characters observed on the last image (TV input). 
 
 ```
 keyboard := [4][10]string{{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}, {"q", "w", "e", "r", "t", "y
 ", "u", "i", "o", "p"}, {"a", "s", "d", "f", "g", "h", "j", "k", "l", "?"}, {"@", "z", "x", "c", "v", "b", "n", "m",
  ",", "."}}
-
 ```
 ### Keylogging
 
@@ -70,3 +73,4 @@ Steps:
 
  - [NEC Infrared Codec Module (ver1.0) (YS-IRTM) - PDF] (https://aitendo3.sakura.ne.jp/aitendo_data/product_img/sensor/infrared/M1838-NEC-4P/M1838-NEC-4P_aitendo.pdf)
  - [MLT-BT05 4.0 Bluetooth module] (http://denethor.wlu.ca/arduino/MLT-BT05-AT-commands-TRANSLATED.pdf)
+ - [WebOS simulator] (https://webostv.developer.lge.com/develop/tools/simulator-introduction)
