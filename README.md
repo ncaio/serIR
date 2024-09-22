@@ -16,12 +16,13 @@ SerIR is an educational abstraction app of Infrared signals captured from human 
 
 When you are in front of your TV holding the controller and pressing any button, a signal will travel from you to the television. Am I correct? This project uses a hardware and software combination to allow you to capture and store those signals.
 
-### The Hardware
+### Hardware
 
 Hardware inventory: 
  - O1 NEC Infrared Codec Module (ver1.0) (YS-IRTM);
  - 02 BT-05 Bluetooth modules;
  - O1 CP2120 Module USB to TTL.
+ - LG Model 43LM6300PSB ~ 50/60 Hz 68 W ~ Software version 05.40.45
 
 #### Characteristics
 
