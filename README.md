@@ -75,3 +75,4 @@ Steps:
  - [NEC Infrared Codec Module (ver1.0) (YS-IRTM) - PDF] (https://aitendo3.sakura.ne.jp/aitendo_data/product_img/sensor/infrared/M1838-NEC-4P/M1838-NEC-4P_aitendo.pdf)
  - [MLT-BT05 4.0 Bluetooth module] (http://denethor.wlu.ca/arduino/MLT-BT05-AT-commands-TRANSLATED.pdf)
  - [WebOS simulator] (https://webostv.developer.lge.com/develop/tools/simulator-introduction)
+ - [Smart TV LG 43" Full HD - HDR Ativo, webOS 4.5 ThinQ AI Processador Quad Core] (www.lg.com/br/tvs-e-soundbars/smart-tvs/43lm6300psb)
