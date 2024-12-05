@@ -4,7 +4,7 @@
 <img src="https://github.com/ncaio/serIR/blob/main/img/Neo%20Tech.png" alt="alt text" width="400" class="center"/>
 </p>
 
-SerIR is an educational abstraction app of Infrared signals captured from human and Television interaction to talk about possible cybersecurity risks, such as:
+SerIR is an educational app about Infrared signals captured from human and Television interaction. It's to talking about possible cybersecurity risks, such as:
 
  - **IR Keylogging**;
  - **IR Tracking and Behavioral Profiling**;
@@ -14,7 +14,7 @@ SerIR is an educational abstraction app of Infrared signals captured from human 
 
 ### How?
 
-When you are in front of your TV holding the controller and pressing any button, a signal will travel from you to the television. Am I correct? This project uses a hardware and software combination to allow you to capture and store those signals.
+When you are in front of your TV, holding the controller and pressing any button, a signal travels from you to the television. Am I correct? This project uses a hardware and software combination to allow you to capture and store those signals.
 
 ### Hardware
 
@@ -33,7 +33,7 @@ Hardware inventory:
 
 ### The software
 
-A virtual/real keyboard is or looks like a matrix. I/We have learned how to abstract it using a programming language. In this case, Golang. For example, the next table represents a multidimensional [4][10] array. 
+A virtual/real keyboard is or looks like a matrix, so we can abstract it using a programming language, in this case, Golang. For example, the next table represents a multidimensional [4][10] array.
 
 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -41,7 +41,7 @@ A virtual/real keyboard is or looks like a matrix. I/We have learned how to abst
 | a | s | d | f | `g` | h | j | k | l | ç |
 | z | x | c | v | b | n | m | , | . | ; |
 
-The algorithm interacts with the sent IR signals, captured by the IR module, and replays the "movements". Every virtual keyboard has an initial/start point. This test's starting point was **g** or index [2,4].   
+The algorithm interacts with the sent IR signals, captured by the IR module, and replays the "movements". PS: Every virtual keyboard has an initial/start point. This test's starting point was **g** or index [2,4].   
 
 **Example - LG TV KEYBOARD MAPPING**
 
