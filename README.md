@@ -76,3 +76,9 @@ Steps:
  - [MLT-BT05 4.0 Bluetooth module] (http://denethor.wlu.ca/arduino/MLT-BT05-AT-commands-TRANSLATED.pdf)
  - [WebOS simulator] (https://webostv.developer.lge.com/develop/tools/simulator-introduction)
  - [Smart TV LG 43" Full HD - HDR Ativo, webOS 4.5 ThinQ AI Processador Quad Core] (www.lg.com/br/tvs-e-soundbars/smart-tvs/43lm6300psb)
+
+### Conferências, Apresentações, Treinamentos
+ - NULLBYTE SECURITY CONFERENCE - 2024 - Formato: Palestra curta (15m)
+ - BSIDES JOAO PESSOA - 2025 - Formato: Apresentação completa (40m)
+ - BSIDES FLORIANOPOLIS - 2026 - Formato: Treinamento (1h)
+ - Apresentação 25-04-2026 - EXPLORAÇÃO_DE_SINAIS_INFRAVERMELHOS_KEYLOG_COMPORTAMENTO_E_CARGAS_MALICIOSAS.pdf
