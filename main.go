@@ -8,35 +8,57 @@ import (
 	"github.com/tarm/serial"
 )
 
+const (
+	// USBTERM CONFIG
+	usbport = "/dev/ttyUSB0"
+	baud    = 9600
+	// Key Mapping
+	left  = "04fb07"
+	right = "04fb06"
+	up    = "04fb40"
+	down  = "04fb41"
+	enter = "04fb44"
+	exit  = "04fb5b"
+	// Others
+	banner = "serIR - por ncaio - v2 - https://github.com/ncaio/serIR"
+)
+
+var keyboardtv = [4][10]string{
+	{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"},
+	{"q", "w", "e", "r", "t", "y", "u", "i", "o", "p"},
+	{"a", "s", "d", "f", "g", "h", "j", "k", "l", "?"},
+	{"@", "z", "x", "c", "v", "b", "n", "m", ",", "."},
+}
+
 //
 //
 //
 
 func Move(p [2]int, d string) ([2]int, string) {
-	keyboardtv := [4][10]string{{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}, {"q", "w", "e", "r", "t", "y", "u", "i", "o", "p"}, {"a", "s", "d", "f", "g", "h", "j", "k", "l", "?"}, {"@", "z", "x", "c", "v", "b", "n", "m", ",", "."}}
+	//
+	// Aqui se constroi a Matriz do teclado virtual
+	//
 	dimension := p[0]
 	position := p[1]
 	P := keyboardtv[dimension][position]
 	//
-	//	<
+	//	<-
 	//
-	if d == "04fb07" {
-		//fmt.Println("Left")
+	if d == left {
 		P = keyboardtv[dimension][position-1]
 		p[1] = position - 1
 	}
 	//
-	// >
+	// ->
 	//
-	if d == "04fb06" {
-		//fmt.Println("Right")
+	if d == right {
 		P = keyboardtv[dimension][position+1]
 		p[1] = position + 1
 	}
 	//
 	// up
 	//
-	if d == "04fb40" {
+	if d == up {
 		//fmt.Println("UP")
 		P = keyboardtv[dimension-1][position]
 		p[0] = dimension - 1
@@ -44,24 +66,25 @@ func Move(p [2]int, d string) ([2]int, string) {
 	//
 	// down
 	//
-	if d == "04fb41" {
-		//fmt.Println("Down")
+	if d == down {
 		P = keyboardtv[dimension+1][position]
 		p[0] = dimension + 1
 	}
 	//
 	//
 	//
-	//fmt.Println(P)
 	return p, P
 }
 
-//
-//
-//
+func destacar(tecla string) string {
+	return fmt.Sprintf("\033[1;30;43m[%s]\033[0m", tecla)
+}
 
 func main() {
-	c := &serial.Config{Name: "/dev/ttyUSB0", Baud: 9600}
+	//
+	// Aqui configura o Serial USB e escuta
+	//
+	c := &serial.Config{Name: usbport, Baud: baud}
 	s, err := serial.OpenPort(c)
 	if err != nil {
 		fmt.Print(err)
@@ -86,6 +109,26 @@ func main() {
 	//
 	//
 	//
+	fmt.Println(banner)
+	//
+	//
+	//
+	fmt.Println("Teclado Virtual:")
+	for i, linha := range keyboardtv {
+		for j, tecla := range linha {
+
+			if i == Point[0] && j == Point[1] {
+				fmt.Print(destacar(tecla), " ")
+			} else {
+				fmt.Printf("[%s] ", tecla)
+			}
+		}
+
+		fmt.Println()
+	}
+	//
+	//
+	//
 	for {
 		for i := 1; i <= 3; i++ {
 			_, err = s.Read(buf)
@@ -96,33 +139,26 @@ func main() {
 			//
 			//
 			tostring := hex.EncodeToString(buf[:len(buf)-1])
-			// fmt.Printf("%x", buf[:len(buf)-1])
-
-			// fmt.Print(".")
 			strslice.WriteString(tostring)
 		}
-		// fmt.Println(strslice.String())
 		//
 		// Left
 		//
-		if strslice.String() == "04fb07" {
-			Lastpoint, Char = Move(Point, "04fb07")
-			//fmt.Println("Last point: ", Lastpoint)
+		if strslice.String() == left {
+			Lastpoint, Char = Move(Point, left)
 			for i, _ := range Lastpoint {
 				Point[i] = Lastpoint[i]
 			}
 			fmt.Print("Position: ", Point)
 			fmt.Println(" Key: " + Char)
-			//fmt.Println(Char)
 			Enter = Char
 			strslice.Reset()
 		}
 		//
 		// Right
 		//
-		if strslice.String() == "04fb06" {
-			Lastpoint, Char = Move(Point, "04fb06")
-			//fmt.Println("Last point: ", Lastpoint)
+		if strslice.String() == right {
+			Lastpoint, Char = Move(Point, right)
 			for i, _ := range Lastpoint {
 				Point[i] = Lastpoint[i]
 			}
@@ -134,13 +170,11 @@ func main() {
 		//
 		//
 		//
-		if strslice.String() == "04fb40" {
-			Lastpoint, Char = Move(Point, "04fb40")
-			//fmt.Println("Last point: ", Lastpoint)
+		if strslice.String() == up {
+			Lastpoint, Char = Move(Point, up)
 			for i, _ := range Lastpoint {
 				Point[i] = Lastpoint[i]
 			}
-			//fmt.Println("Position: ", Point)
 			fmt.Print("Position: ", Point)
 			fmt.Println(" Key: " + Char)
 			Enter = Char
@@ -149,13 +183,11 @@ func main() {
 		//
 		//
 		//
-		if strslice.String() == "04fb41" {
-			Lastpoint, Char = Move(Point, "04fb41")
-			//fmt.Println("Last point: ", Lastpoint)
+		if strslice.String() == down {
+			Lastpoint, Char = Move(Point, down)
 			for i, _ := range Lastpoint {
 				Point[i] = Lastpoint[i]
 			}
-			//fmt.Println("Point: ", Point)
 			fmt.Print("Position: ", Point)
 			fmt.Println(" Key: " + Char)
 			Enter = Char
@@ -165,16 +197,15 @@ func main() {
 		//
 		// ENTER
 		//
-		if strslice.String() == "04fb44" {
+		if strslice.String() == enter {
 			fmt.Println("Enter")
 			Passwd = append(Passwd, Enter)
 			strslice.Reset()
-			// fmt.Println(Passwd)
 		}
 		//
 		// Qq Quit
 		//
-		if strslice.String() == "04fb5b" {
+		if strslice.String() == exit {
 			fmt.Println(Passwd)
 			break
 		}
