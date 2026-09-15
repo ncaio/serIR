@@ -73,14 +73,13 @@ Steps:
 
 ### IR payload injection
 
-O byte `FA` no início do quadro é usado como endereço universal do módulo YS-IRTM. Ele permite enviar comandos ao módulo independentemente do endereço configurado.
+O byte `FA` no início do quadro é usado como endereço universal do módulo YS-IRTM. Ele permite enviar comandos ao módulo independentemente do endereço configurado. The `FA` byte at the beginning of the frame is used as the universal address of the YS-IRTM module. It allows commands to be sent to the module regardless of its configured address.
 
-Exemplo de transmissão:
+Exemplo de transmissão: Example:
 
 `FA F1 04 FB 07`
 
-Onde `FA` é o endereço universal e `F1` indica uma transmissão infravermelha.
-
+Onde `FA` é o endereço universal e `F1` indica uma transmissão infravermelha. Here, `FA` is the universal address and `F1` indicates an infrared transmission.
 
 ### Sources and references
 
