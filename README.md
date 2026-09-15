@@ -52,9 +52,12 @@ O algoritmo interage com os sinais infravermelhos enviados, capturados pelo mód
 O código a seguir representa os caracteres básicos observados na última imagem (entrada de TV). (The following code represents the basic characters observed on the last image (TV input).)
 
 ```
-keyboard := [4][10]string{{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}, {"q", "w", "e", "r", "t", "y
-", "u", "i", "o", "p"}, {"a", "s", "d", "f", "g", "h", "j", "k", "l", "?"}, {"@", "z", "x", "c", "v", "b", "n", "m",
- ",", "."}}
+keyboard := [4][10]string{
+{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"},
+{"q", "w", "e", "r", "t", "y", "u", "i", "o", "p"},
+{"a", "s", "d", "f", "g", "h", "j", "k", "l", "?"},
+{"@", "z", "x", "c", "v", "b", "n", "m", ",", "."},
+}
 ```
 ### IR Keylogging
 
@@ -81,4 +84,5 @@ Steps:
  - NULLBYTE SECURITY CONFERENCE - 2024 - Formato: Palestra curta (15m)
  - BSIDES JOAO PESSOA - 2025 - Formato: Apresentação completa (40m)
  - BSIDES FLORIANOPOLIS - 2026 - Formato: Treinamento (1h)
+ - BSIDES JOAO PESSOA - 2026 - Formato: Treinamento (1h)
  - Apresentação 25-04-2026 - [EXPLORAÇÃO_DE_SINAIS_INFRAVERMELHOS_KEYLOG_COMPORTAMENTO_E_CARGAS_MALICIOSAS.pdf](EXPLORAÇÃO_DE_SINAIS_INFRAVERMELHOS_KEYLOG_COMPORTAMENTO_E_CARGAS_MALICIOSAS.pdf)
