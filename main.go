@@ -23,6 +23,7 @@ const (
 	banner = "serIR - por ncaio - v2 - https://github.com/ncaio/serIR"
 )
 
+// Aqui se constroi a Matriz do teclado virtual
 var keyboardtv = [4][10]string{
 	{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"},
 	{"q", "w", "e", "r", "t", "y", "u", "i", "o", "p"},
@@ -35,9 +36,7 @@ var keyboardtv = [4][10]string{
 //
 
 func Move(p [2]int, d string) ([2]int, string) {
-	//
-	// Aqui se constroi a Matriz do teclado virtual
-	//
+
 	dimension := p[0]
 	position := p[1]
 	P := keyboardtv[dimension][position]
