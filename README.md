@@ -69,6 +69,10 @@ Steps:
  - Realize uma interação no teclado na TV. (On TV, go to a keyboard interaction. For example, a browser or another textbox interaction;)
  - Inicie o serIR. (It is time to start the serIR;)
 
+<p align="center">
+<img src="https://github.com/user-attachments/assets/c13bcfcb-2752-4282-b88c-83c9c96cadee" alt="alt text" width="400" class="center"/>
+</p>
+
 ### IR Tracking and Behavioral Profiling
 
 ### IR payload injection
