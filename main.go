@@ -79,6 +79,21 @@ func Move(p [2]int, d string) ([2]int, string) {
 func destacar(tecla string) string {
 	return fmt.Sprintf("\033[1;30;43m[%s]\033[0m", tecla)
 }
+func tecladovirtual(po [2]int) {
+	fmt.Println("Teclado Virtual:")
+	for i, linha := range keyboardtv {
+		for j, tecla := range linha {
+
+			if i == po[0] && j == po[1] {
+				fmt.Print(destacar(tecla), " ")
+			} else {
+				fmt.Printf("[%s] ", tecla)
+			}
+		}
+
+		fmt.Println()
+	}
+}
 
 func main() {
 	//
@@ -111,21 +126,9 @@ func main() {
 	//
 	fmt.Println(banner)
 	//
+	// Imprime teclado virtual
 	//
-	//
-	fmt.Println("Teclado Virtual:")
-	for i, linha := range keyboardtv {
-		for j, tecla := range linha {
-
-			if i == Point[0] && j == Point[1] {
-				fmt.Print(destacar(tecla), " ")
-			} else {
-				fmt.Printf("[%s] ", tecla)
-			}
-		}
-
-		fmt.Println()
-	}
+	tecladovirtual(Point)
 	//
 	//
 	//
@@ -149,6 +152,7 @@ func main() {
 			for i, _ := range Lastpoint {
 				Point[i] = Lastpoint[i]
 			}
+			tecladovirtual(Point)
 			fmt.Print("Position: ", Point)
 			fmt.Println(" Key: " + Char)
 			Enter = Char
@@ -162,6 +166,7 @@ func main() {
 			for i, _ := range Lastpoint {
 				Point[i] = Lastpoint[i]
 			}
+			tecladovirtual(Point)
 			fmt.Print("Position: ", Point)
 			fmt.Println(" Key: " + Char)
 			Enter = Char
@@ -175,6 +180,7 @@ func main() {
 			for i, _ := range Lastpoint {
 				Point[i] = Lastpoint[i]
 			}
+			tecladovirtual(Point)
 			fmt.Print("Position: ", Point)
 			fmt.Println(" Key: " + Char)
 			Enter = Char
@@ -188,6 +194,7 @@ func main() {
 			for i, _ := range Lastpoint {
 				Point[i] = Lastpoint[i]
 			}
+			tecladovirtual(Point)
 			fmt.Print("Position: ", Point)
 			fmt.Println(" Key: " + Char)
 			Enter = Char
