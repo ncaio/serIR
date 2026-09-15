@@ -73,6 +73,15 @@ Steps:
 
 ### IR payload injection
 
+O byte `FA` no início do quadro é usado como endereço universal do módulo YS-IRTM. Ele permite enviar comandos ao módulo independentemente do endereço configurado.
+
+Exemplo de transmissão:
+
+`FA F1 04 FB 07`
+
+Onde `FA` é o endereço universal e `F1` indica uma transmissão infravermelha.
+
+
 ### Sources and references
 
  - [NEC Infrared Codec Module (ver1.0) (YS-IRTM) - PDF] (https://aitendo3.sakura.ne.jp/aitendo_data/product_img/sensor/infrared/M1838-NEC-4P/M1838-NEC-4P_aitendo.pdf)
