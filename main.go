@@ -41,23 +41,23 @@ func Move(p [2]int, d string) ([2]int, string) {
 	position := p[1]
 	P := keyboardtv[dimension][position]
 	//
-	//	<-
+	//	<- left
 	//
-	if d == left {
+	if d == left && position > 0 {
 		P = keyboardtv[dimension][position-1]
 		p[1] = position - 1
 	}
 	//
-	// ->
+	// -> right
 	//
-	if d == right {
+	if d == right && position < len(keyboardtv[dimension])-1 {
 		P = keyboardtv[dimension][position+1]
 		p[1] = position + 1
 	}
 	//
 	// up
 	//
-	if d == up {
+	if d == up && dimension > 0 {
 		//fmt.Println("UP")
 		P = keyboardtv[dimension-1][position]
 		p[0] = dimension - 1
@@ -65,16 +65,17 @@ func Move(p [2]int, d string) ([2]int, string) {
 	//
 	// down
 	//
-	if d == down {
+	if d == down && dimension < len(keyboardtv)-1 {
 		P = keyboardtv[dimension+1][position]
 		p[0] = dimension + 1
 	}
 	//
-	//
+	// Retorna posição
 	//
 	return p, P
 }
 
+// Func de destaque do teclado
 func destacar(tecla string) string {
 	return fmt.Sprintf("\033[1;30;43m[%s]\033[0m", tecla)
 }
